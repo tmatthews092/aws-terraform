@@ -1,6 +1,6 @@
 # AWS Terraform Integration
 
-Using Terraform we are using IaC principles to deploy a defined Python3 Lambda Function and an S3 Bucket
+Using Terraform we are deploying Python3 Lambda Function, an S3 Bucket, IAM Policy, and Log Group to a AWS Account where we can upload .fasta files.
 
 ### Lambda Function
 
