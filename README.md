@@ -35,3 +35,8 @@ We use the .count function to determine all instances of a specified substring w
 - Add parameterization for substring_to_search
 - Improve error catching + reporting in Lambda function
 - Integrate biopython library for scalable read of sequences
+- Clean up main.py
+
+### Limitations
+
+- If changing regions via the aws provider (eg us-east-2 -> us-east-1) there's a bug which occurs on `terraform apply`. https://github.com/hashicorp/terraform-provider-aws/issues/23221
