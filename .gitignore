@@ -1,0 +1,38 @@
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Ignore override files as they are usually used to override resources locally and so
+# are not checked in
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore any .tfvars files that are generated automatically for each Terraform run. Most
+# .tfvars files are managed as part of configuration and so should be included in
+# version control.
+#
+# example.tfvars
+
+# Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
+# example: *tfplan*
+*.tfplan
+
+# Go best practices dictate that libraries should not include the vendor directory
+vendor
+
+# Terratest directory used to store temporary data
+.test-data
+
+# Terraform crash log files
+crash.log
+
+.terraform.lock.hcl
+.tool-versions
+
+# Generated Deployment Package
+lambda_function_payload.zip
