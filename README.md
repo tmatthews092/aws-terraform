@@ -21,6 +21,7 @@ We use the .count function to determine all instances of a specified substring w
 - Use the `terraform init` cmd to build the .terraform folder in your local
 - Use the `terraform apply` cmd to build deploy the AWS resources from the main.tf file
     - Enter `yes` when prompted
+    - It will take a minute or two for all the changes to apply to the AWS Account
 - Enter the AWS Console and navigate to the S3 Bucket
 - Upload a .fasta file
 - Refresh the S3 Bucket a /results folder should appear
