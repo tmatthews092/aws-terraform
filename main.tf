@@ -148,7 +148,3 @@ resource "aws_cloudwatch_log_group" "lambda_log_group" {
     prevent_destroy = false
   }
 }
-
-resource "aws_secretsmanager_secret" "example" {
-  name = "example"
-}
