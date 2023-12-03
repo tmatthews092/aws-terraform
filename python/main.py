@@ -3,6 +3,7 @@ import boto3
 from datetime import datetime, timezone
 import json
 import logging
+import os
 import re
 import sys
 import traceback
@@ -15,7 +16,7 @@ logger.setLevel(logging.INFO)
 s3 = boto3.client('s3')
 
 # init substring to search
-substring_to_search = 'AACGCT'
+substring_to_search = os.environ['SUBSTRING_TO_SEARCH']
 
 def lambda_handler(event, context):
     try:
@@ -60,12 +61,12 @@ def get_fasta_s3_object(event):
 
 def set_match_data(file_key, sequence_data):
     # format all data to be inserted in s3 file
-    return {
+    return json_to_string({
         "file_name": file_key,
         "substring_to_search": substring_to_search,
         "sequences_data": sequence_data,
         "timestamp": datetime.now(timezone.utc)
-    }
+    })
 
 def set_sequence_data(fc):
     sequence_data = []
@@ -90,12 +91,11 @@ def set_sequence_data(fc):
 # ----------------------------------------------------------------------------------------------------------------------
 
 def upload_results_s3_object(match_data, file_key, bucket_name):
-    encoded_string = json_to_string(match_data)
     file_name = f"results_{file_key}.json"
     s3_path = "results/" + file_name
 
     # upload s3 file back to bucket in results folder
-    s3.put_object(Bucket=bucket_name, Key=s3_path, Body=encoded_string)
+    s3.put_object(Bucket=bucket_name, Key=s3_path, Body=match_data)
     logger.info(f'***Uploaded {file_name} to the results folder in {bucket_name}***')
 
 def upload_errors_s3_object(file_key, bucket_name, error_msg):
