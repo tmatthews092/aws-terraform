@@ -28,6 +28,7 @@ We use the .count function to determine all instances of a specified substring w
 - In the /results folder there should be a file that has JSON data of the match results from the .fasta file that was uploaded. Download or Open to verify results
 - There are also CloudWatch log files available through the Lambda function
 - When you want to remove all the deployed resources from the AWS Account use `terraform destroy`
+    - Enter `yes` when prompted
 
 ### TODO
 
