@@ -19,6 +19,6 @@ terraform {
 
 data "archive_file" "lambda" {
   type        = "zip"
-  source_file = "python/main.py"
+  source_dir = "${path.module}/src"
   output_path = var.lambda_zip_file_name
 }
