@@ -35,10 +35,6 @@ We use the .count function to determine all instances of a specified substring w
 - Improve security by using IAM access tokens
 - Integrate biopython library for scalable read of sequences
 - Add unit test for terraform deploy
-- ~~Abstract out main.tf file and values~~
-- ~~Add parameterization for substring_to_search~~
-- ~~Improve error catching + reporting in Lambda function~~
-- ~~Clean up main.py~~
 
 ### Limitations
 
