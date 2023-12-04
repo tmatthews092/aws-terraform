@@ -19,7 +19,7 @@ variable "lambda_zip_file_name" {
 variable "lambda_function_name" {
   description = "Lambda Function Name"
   type        = string
-  default     = "fastaFileParser"
+  default     = "fasta_file_parser"
 }
 
 variable "substring_to_search" {

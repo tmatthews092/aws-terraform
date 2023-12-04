@@ -39,5 +39,5 @@ def get_s3_object(event):
     obj = s3.get_object(Bucket=bucket_name, Key=file_key)
     # get lines of file
     file_content = obj['Body'].read().decode('utf-8').splitlines()
-    logger.info(f'***Fasta File {file_key} was uploaded***')
+    logger.info(f'***Got file {file_key} in {bucket_name}***')
     return bucket_name, file_key, file_content

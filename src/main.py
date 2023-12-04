@@ -5,6 +5,7 @@ import sys
 import traceback
 from utils.helpers import *
 from utils.s3_helpers import *
+from services.fasta_file_parser_service import set_match_data, set_sequence_data
 
 # init logger
 logger = logging.getLogger()
